@@ -1,4 +1,4 @@
-import { BASE_URL } from "@/config/env_d";
+import { BASE_URL, MONGO_URL } from "@/config/env_d";
 import { ExerciseType } from "@/config/models_d";
 
 type RequestResponse<TData> = {
@@ -30,6 +30,8 @@ export async function createExercise(
 }
 
 export async function getExercises(): Promise<RequestResponse<Exercise[]>> {
+  console.log("BASE URL: " + BASE_URL);
+  console.log("MONGO URL:" + MONGO_URL);
   const promise = await fetch(`${BASE_URL}/api/exercise`, {
     next: { tags: ["get-all-exercises"] },
   });

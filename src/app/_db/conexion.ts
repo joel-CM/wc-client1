@@ -13,6 +13,7 @@ async function dbConnect() {
       return;
     }
 
+    console.log("MONGO URL: " + MONGO_URL);
     /* connecting to our database */
     const db = await mongoose.connect(MONGO_URL, {});
 
